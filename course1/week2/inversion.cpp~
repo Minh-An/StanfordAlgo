@@ -1,0 +1,57 @@
+#include <algorithm>
+#include <fstream>
+#include <iostream>
+#include <iterator>
+#include <vector>
+
+using namespace std;
+
+void CountSplitInversions(vector<int>& A, vector<int>& aux, int lo, int mid, int hi)
+{
+  int i = lo;
+  int j = mid+1;
+  for(k = lo; k <= hi; k++)
+  {
+    
+  }
+
+  for(int k = lo; k <= hi; k++ )
+  {
+  }    
+}
+
+
+void SortAndCount(vector<int>& A, vector<int>& aux, int lo, int hi, int* inversions)
+{
+  if(lo >= hi) { return; }
+  int mid = (hi - lo) /2 + lo;
+  SortAndCount(A, aux, lo, mid, inversions);
+  SortAndCount(A, aux, mid+1, hi, inversions);
+  CountSplitInversions(A, aux, lo, mid, hi);
+}
+
+
+
+int main() {
+  ifstream inputFile("IntegerArray.txt", ios::in);
+
+  vector<int> integers;
+
+  istream_iterator<int> begin(inputFile);
+  istream_iterator<int> eof;
+
+  copy(begin, eof, back_inserter(integers));
+  sort(integers.begin(), integers.end());
+
+  cout << integers[integers.size()-1] << endl;
+  cout << integers[0] << endl;
+  cout << integers[integers.size()/2-1] << endl;
+
+  vector<int> test = {5,4,6,3,1,2};
+  vector<int> aux(test.size());
+  int inversions = 0;
+  SortAndCount(test, 0, test.size()-1, &inversions);
+  
+  //SortAndCount(integers, 0, integers.size()-1, &inversions);
+
+}
