@@ -6,11 +6,8 @@
 using namespace std;
 
 class Digraph
-<<<<<<< HEAD
 { 
-=======
-{
->>>>>>> 481e21cc61057690c4784f8b63fce8adc0729868
+
 public:
 	Digraph(int n);
 	Digraph(int n, string filename);

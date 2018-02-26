@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-	Digraph g(875715, "D:\\repos\\StanfordAlgo\\course2\\week1\\SCC\\SCC\\SCC.txt");
+	Digraph g(875715, "D:\\repos\\StanfordAlgo\\course2\\week1\\SCC\\SCC.txt");
 	//cout << g; 
 
 	ComputeSCC scc(&g);
