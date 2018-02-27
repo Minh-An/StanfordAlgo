@@ -5,7 +5,7 @@
 
 int main()
 {
-	WeightedDigraph g(200, "D:\\Downloads\\dijkstraData.txt");
+	WeightedDigraph g(200, "D:\\repos\\StanfordAlgo\\course2\\week2\\Dijkstra\\dijkstraData.txt");
 	//cout << g; 
 	Dijkstra dijkstra(0, g);
 	cout << dijkstra;
