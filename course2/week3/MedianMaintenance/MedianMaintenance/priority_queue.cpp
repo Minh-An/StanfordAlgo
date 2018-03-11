@@ -13,12 +13,12 @@ void PriorityQueue::Insert(int i)
 	BubbleUp(n);
 }
 
-int PriorityQueue::ExtractMin()
+int PriorityQueue::Pop()
 {
 	if (!IsEmpty())
 	{
 		int min = heap[1];
-		Switch(1, n--);
+		Swap(1, n--);
 		BubbleDown(1);
 		heap.pop_back();
 		return min;
@@ -26,7 +26,7 @@ int PriorityQueue::ExtractMin()
 	return 0;
 }
 
-int PriorityQueue::GetMin()
+int PriorityQueue::Top()
 {
 	if (!IsEmpty())
 	{
@@ -49,7 +49,7 @@ void PriorityQueue::BubbleUp(int i)
 {
 	while (i > 1 && comparator(heap[i], heap[i / 2]))
 	{
-		Switch(i, i / 2);
+		Swap(i, i / 2);
 		i = i / 2;
 	}
 }
@@ -69,12 +69,12 @@ void PriorityQueue::BubbleDown(int i)
 			return;
 		}
 
-		Switch(i, j);
+		Swap(i, j);
 		i = j;
 	}
 }
 
-void PriorityQueue::Switch(int i, int j)
+void PriorityQueue::Swap(int i, int j)
 {
 	int temp = heap[i];
 	heap[i] = heap[j];

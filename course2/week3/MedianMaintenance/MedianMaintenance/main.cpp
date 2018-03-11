@@ -27,7 +27,7 @@ int sumMedians(string filename)
 		{
 			if (high.Size() > low.Size())
 			{
-				int num = high.ExtractMin();
+				int num = high.Pop();
 				low.Insert(num);
 			}
 			high.Insert(next);
@@ -36,15 +36,15 @@ int sumMedians(string filename)
 		{
 			if (low.Size() > high.Size())
 			{
-				int num = low.ExtractMin();
+				int num = low.Pop();
 				high.Insert(num);
 			}
 			low.Insert(next);
 		}
 
 		//find median
-		if (high.Size() > low.Size()) median = high.GetMin();
-		else median = low.GetMin();
+		if (high.Size() > low.Size()) median = high.Top();
+		else median = low.Top();
 		sum += median;
 	}
 

@@ -9,8 +9,8 @@ class PriorityQueue
 public:
 	PriorityQueue(const function<bool(int, int)>& comparator);
 	void Insert(int i);
-	int ExtractMin();
-	int GetMin();
+	int Pop();
+	int Top();
 
 	int Size();
 	bool IsEmpty();
@@ -23,5 +23,5 @@ private:
 
 	void BubbleUp(int i);
 	void BubbleDown(int i);
-	void Switch(int i, int j);
+	void Swap(int i, int j);
 };
