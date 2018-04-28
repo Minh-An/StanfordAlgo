@@ -20,8 +20,6 @@ int main()
 	int n = stoi(line.substr(0,space));
 	int bits = stoi(line.substr(space+1));
 	
-	cout << n << " "<< bits << endl;
-
 	unordered_set<uint32_t> nodes;
 
 	while (getline(input, line))
